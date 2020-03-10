@@ -14,29 +14,36 @@
 		
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar" class="active">
-				<h1><a href="index.html" class="logo">M.</a></h1>
+				<h1><a href="index.html" class="logo"><img src="https://orderhive.weebly.com/uploads/2/4/2/5/24257196/882673_orig.png"style ="height:40px;"></a></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active">
-            <a href="#"><span class="fa fa-home"></span> Home</a>
+            <a href=""><span class="fa fa-home"></span>Home</a>
           </li>
           <li>
-              <a href="#"><span class="fa fa-user"></span> About</a>
+              <a href="category_setup.php"><span class="fa fa-user"></span>Category Setup</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-sticky-note"></span> Blog</a>
+            <a href="Company_setup.php"><span class="fa fa-sticky-note"></span>Company Setup</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-cogs"></span> Services</a>
+            <a href="Item_setup.php"><span class="fa fa-cogs"></span>Item Setup</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+            <a href="Search&view.php"><span class="fa fa-paper-plane"></span>Search & View</a>
+          </li>
+          <li>
+            <a href="Stock_in.php"><span class="fa fa-paper-plane"></span>Purchase</a>
+          </li>
+          <li>
+            <a href="Stock_out.php"><span class="fa fa-paper-plane"></span>Sell</a>
+          </li>
+          <li>
+            <a href="View_sales.php"><span class="fa fa-paper-plane"></span>View Sales</a>
           </li>
         </ul>
 
         <div class="footer">
-        	<p>
-					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Hafiz</a>
-					</p>
+        	<p>Copyright &copy;</p>
         </div>
     	</nav>
 
@@ -63,7 +70,7 @@
                     <a class="nav-link" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
+                    <a class="nav-link" href="#"></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
