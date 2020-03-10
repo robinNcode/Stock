@@ -8221,14 +8221,14 @@ h1, h2, h3, h4, h5,
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   #sidebar.active {
-    min-width: 80px;
+    min-width: 90px;
     max-width: 80px;
     text-align: center; }
     #sidebar.active ul.components li {
       font-size: 14px; }
-      #sidebar.active ul.components li a {
+      #sidebar.active ul.components li button {
         padding: 10px 0; }
-        #sidebar.active ul.components li a span {
+        #sidebar.active ul.components li button span {
           margin-right: 0;
           display: block;
           font-size: 24px; }
