@@ -56,8 +56,6 @@
                       <?php }*/
                   } ?>
               </select>
-              
-                <?= form_error('versity_id') ?>
             </div>
             
           </div>
