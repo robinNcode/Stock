@@ -1,16 +1,12 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
 <!DOCTYPE html> 
 <html lang = "en">
  
    <head> 
       <meta charset = "utf-8">
       <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
-      <title><?= $page_title ?></title>
+      <title>Stock Management System</title>
 
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url("Assets/css/bootstrap.min.css")?>">
+      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css")?>">
 
    </head>
 	
