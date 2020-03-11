@@ -39,31 +39,13 @@
               <span class="text-danger font-weight-bold">*</span>
                </label>
 				<div class="col-md-7">
-              		<select id="versity_id" class="form-control" name="versity_id"  >
-                		<option value="">Select a Option</option>
-                		<option value="1">Unilever</option>
-                		<option value="2">RFL</option>
-                		<option value="3">PRAN</option>
-                		<option value="4">RUCHI</option>
-                    <option value="5">WALTON</option>
-                    <option value="6">RADHUNI</option>
-    
-                  <?php
-                  if ($importers != NULL) {
-                     /* foreach ($importers as $importer) {
-                          ?>
-                        <option value="<?= $importer->id ?>"
-                                <?= set_select('party_id', $importer->id); ?>
-                                <?= ($importer->id == 0) ? 'disabled' : NULL ?>><?= $importer->name ?></option>
-                      <?php }*/
-                  } ?>
-              </select>
+          <input type="text" id="versity_id" class="form-control" name="versity_id">
             </div>
           </div>
           <div class="container">
         <div class="row">
           <div class="col-10">
-            <button type="submit" name="create" value="yes" class="btn btn-outline-warning float-right">Save
+            <button type="submit" name="create" value="yes" class="btn btn-warning float-right">Save
             </button>
           </div>
         </div>

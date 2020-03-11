@@ -13,38 +13,52 @@
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar" class="active">
+			<nav id="sidebar" class="">
 				<a href="#" class="logo"><img src="https://orderhive.weebly.com/uploads/2/4/2/5/24257196/882673_orig.png"style ="height:40px;"></a>
-        <form method="get">
           <ul class="list-unstyled components mb-5">
           <li class="active">
-            <button type="submit" name="submit" value="dashboard.php" class="btn btn-primary"><span class="fa fa-home"></span>Home</button>
+            <a href="index.php?submit=dashboard.php" title="">
+              <span class="fa fa-home"></span>Home
+            </a>
           </li>
           <li>
-            <button type="submit" name="submit" value="category_setup.php" class="btn btn-primary"><span class="fa fa-user"></span>Category Setup</button>
+            <a href="index.php?submit=category_setup.php" title="">
+              <span class="fa fa-user"></span>Category Setup
+            </a>
           </li>
           <li>
-            <button type="submit" name="submit" value="company_setup.php" class="btn btn-primary"><span class="fa fa-sticky-note"></span>Company Setup</button>
+            <a href="index.php?submit=company_setup.php" title="">
+              <span class="fa fa-sticky-note"></span>Company Setup
+            </a>
           </li>
           <li>
-            <button type="submit" name="submit" value="item_setup.php" class="btn btn-primary"><span class="fa fa-cogs"></span>Item Setup</button>
-          </li>
-          <li>
-            <button type="submit" name="submit" value="search&view.php" class="btn btn-primary"><span class="fa fa-paper-plane"></span>Search & View</button>
-          </li>
-          <li>
-            <button type="submit" name="submit" value="purchase.php" class="btn btn-primary"><span class="fa fa-paper-plane"></span>Purchase</button>
+            <a href="index.php?submit=item_setup.php" title="">
+              <span class="fa fa-cogs"></span>Item Setup
+            </a>
             
           </li>
           <li>
-            <button type="submit" name="submit" value="sell.php" class="btn btn-primary"><span class="fa fa-paper-plane"></span>Sell</button>
+            <a href="index.php?submit=searchandview.php" title="">
+              <span class="fa fa-paper-plane"></span>Search & View
+            </a>
+          </li>
+          <li>
+            <a href="index.php?submit=purchase.php" title="">
+              <span class="fa fa-paper-plane"></span>Purchase
+            </a>
             
           </li>
           <li>
-            <button type="submit" name="submit" value="view_sales.php" class="btn btn-primary"><span class="fa fa-paper-plane"></span>View Sales</button>
+            <a href="index.php?submit=sell.php" title="">
+              <span class="fa fa-paper-plane"></span>Sell
+            </a>
+          </li>
+          <li>
+            <a href="index.php?submit=view_sales.php" title="">
+              <span class="fa fa-paper-plane"></span>View Sales
+            </a>
           </li>
         </ul>
-        </form>
         
 
         <div class="footer">
@@ -89,9 +103,9 @@
           if(isset($_GET['submit'])
         ){
             $page_path = $_GET['submit'];
-          include $page_path;
+          require $page_path;
         }else{
-          include 'Dashboard.php';
+          require 'Dashboard.php';
         }
         ?>
       </div>

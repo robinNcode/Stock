@@ -37,32 +37,16 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="name_id">Category Name :
               <span class="text-danger font-weight-bold">*</span>
-               </label>
-				<div class="col-md-7">
-              		<select id="versity_id" class="form-control" name="versity_id"  >
-                		<option value="">Select a Option</option>
-                		<option value="1">Stationary</option>
-                		<option value="2">Cosmetics</option>
-                		<option value="3">Electronics</option>
-                		<option value="4">Kitchen Items</option>
-    
-                  <?php
-                  if ($importers != NULL) {
-                     /* foreach ($importers as $importer) {
-                          ?>
-                        <option value="<?= $importer->id ?>"
-                                <?= set_select('party_id', $importer->id); ?>
-                                <?= ($importer->id == 0) ? 'disabled' : NULL ?>><?= $importer->name ?></option>
-                      <?php }*/
-                  } ?>
-              </select>
+            </label>
+			<div class="col-md-7">
+				<input type="text" id="versity_id" class="form-control" name="versity_id">
             </div>
             
           </div>
           <div class="container">
         <div class="row">
           <div class="col-10">
-            <button type="submit" name="create" value="yes" class="btn btn-outline-warning float-right">Save
+            <button type="submit" name="create" value="yes" class="btn btn-warning float-right">Save
             </button>
           </div>
         </div>

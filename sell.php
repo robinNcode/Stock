@@ -30,7 +30,7 @@
 	</div>
 	<form method="POST" action="http://localhost/CI_Result_processor/crud/info">
     <div class="container">
-      <legend class="bg-info text-light"><center><i class="fas fa-fw fa-briefcase"></i>Stock Out</center></legend>
+      <legend class="bg-info text-light"><center><i class="fas fa-fw fa-briefcase"></i>Sell</center></legend>
   <div class="card-body border border-primary">
           <fieldset>
            <!--Company Name -->
@@ -111,7 +111,7 @@
           </div>
           <!--Stock In Quantity -->
           <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="name_id">Stock In Quantity :
+            <label class="col-md-3 col-form-label" for="name_id">Sell Quantity :
               <span class="text-danger font-weight-bold">*</span> </label>
             <div class="col-md-7">
               <input class="form-control" type="text" name="name_id" id="name_id" placeholder="Input Stock In Quantity "/>

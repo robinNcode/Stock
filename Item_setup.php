@@ -109,7 +109,7 @@
           <div class="container">
         <div class="row">
           <div class="col-10">
-            <button type="submit" name="create" value="yes" class="btn btn-outline-warning float-right">Save
+            <button type="submit" name="create" value="yes" class="btn btn-warning float-right">Save
             </button>
           </div>
         </div>
