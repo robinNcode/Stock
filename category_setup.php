@@ -24,7 +24,7 @@
 </head>
 <body>
 
-	<form method="POST" action="database/categorySetup.php">
+	<form method="POST" action="">
 
     <?php require_once 'database/categorySetup.php'; ?>
 
@@ -44,7 +44,6 @@
     $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
     $show = $conn->query("SELECT * FROM category") or die ("Failed ". $conn->error);
 
-    $show->fetch_assoc();
   ?>
 
 
@@ -73,7 +72,7 @@
       <br>
       <br>
   </fieldset>
-  <table class="table table-hover border border-primary dataTable" id="example">
+  <table class="table table-hover table-bodered border-primary" id="example">
   <thead>
     <tr>
       <th scope="col">SERIAL NO</th>
