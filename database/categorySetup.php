@@ -12,7 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-session_start();
     $update = false;
     $id = 0;
   
@@ -24,10 +23,10 @@ session_start();
 
  	$_SESSION ['messege'] = "Information has been Saved!";
  	$_SESSION ['msg_type'] = "success";
- 	header("location: ../category_setup.php");
+ 	header("location: ../index.php?submit=category_setup.php");
 
  }
- if (isset($_GET['delete'])){
+ else if (isset($_GET['delete'])){
 
  	$id = $_GET['delete'];
  	
@@ -35,7 +34,7 @@ session_start();
 
  	$_SESSION ['messege'] = "Information has been removed!";
  	$_SESSION ['msg_type'] = "danger";
- 	header("location: ../category_setup.php");
+ 	//header("location: ../category_setup.php");
  }
 
  ?>
