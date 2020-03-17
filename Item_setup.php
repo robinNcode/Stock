@@ -1,3 +1,13 @@
+<?php if(isset($_SESSION['message'])): ?>
+  <div class="container alert alert-<?= $_SESSION['msg_type']?>">
+    
+    <?php 
+      echo $_SESSION['message'];
+      unset($_SESSION['message']);
+    ?>
+  </div>
+  <?php endif ?>
+
 <form method="POST" action="database/itemSetup.php">
     <div class="container">
         <legend class="bg-info text-light">
@@ -15,7 +25,7 @@
                         $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
                         $category= $conn->query("SELECT * FROM category") or die ("Failed ". $conn->error);
                       ?>
-                            <select id="versity_id" class="form-control" name="versity_id">
+                            <select id="category" class="form-control" name="category">
                                 <option value="">Select Option</option>
                                 <?php while ($cat=$category->fetch_assoc()): ?>
                                     <option value="<?php echo $cat['id'];?>">
@@ -36,7 +46,7 @@
                         $company= $conn->query("SELECT * FROM company") or die ("Failed ". $conn->error);
                       ?>
                             <select id="company" class="form-control" name="company">
-                                <option value="">Select Option</option>} option>
+                                <option value="">Select Option</option>
                                 <?php while ($com=$company->fetch_assoc()): ?>
                                     <option value="<?php echo $com['id'];?>">
                                         <?php echo $com['company'];?>
@@ -68,7 +78,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="create" value="yes" class="btn btn-warning float-right">Save
+                            <button type="submit" name="save" class="btn btn-warning float-right">Save
                             </button>
                         </div>
                     </div>
