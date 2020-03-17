@@ -51,16 +51,16 @@
                             <table class="table table-hover border border-primary" id="example">
                                 <thead>
                                     <tr>
-                                        <th scope="col">SERIAL NO</th>
-                                        <th scope="col">CATEGORY</th>
-                                        <th scope="col" colspan="2">
+                                        <th >SERIAL NO</th>
+                                        <th >CATEGORY</th>
+                                        <th>
                                             <center>ACTION</center>
                                         </th>
                                     </tr>
                                 </thead>
-
+ <tbody>
                                 <?php while ($row=$show->fetch_assoc()): ?>
-                                    <tbody>
+                                   
                                         <tr>
                                             <td>
                                                 <?php echo $row['id']; ?>
@@ -81,8 +81,3 @@
                     </div>
 </form>
 
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-</script>
