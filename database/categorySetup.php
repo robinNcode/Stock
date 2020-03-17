@@ -34,7 +34,7 @@ if ($conn->connect_error) {
 
  	$_SESSION ['messege'] = "Information has been removed!";
  	$_SESSION ['msg_type'] = "danger";
- 	//header("location: ../category_setup.php");
+ 	header("location: ../index.php?submit=category_setup.php");
  }
 
  ?>
