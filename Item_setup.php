@@ -10,7 +10,7 @@
 
 <form method="POST" action="database/itemSetup.php">
     <div class="container">
-        <legend class="bg-info text-light">
+        <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Item Setup</center>
         </legend>
         <div class="card-body border border-primary">
@@ -42,7 +42,6 @@
                     </label>
                     <div class="col-md-7">
                         <?php 
-                        $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
                         $company= $conn->query("SELECT * FROM company") or die ("Failed ". $conn->error);
                       ?>
                             <select id="company" class="form-control" name="company">

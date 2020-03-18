@@ -29,7 +29,7 @@ session_start();
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar" class="">
-            <a href="index.php" class="logo"><img alt="Image not found" src="https://orderhive.weebly.com/uploads/2/4/2/5/24257196/882673_orig.png" style="height:40px;"></a>
+            <a href="index.php" class="logo"><img alt="Stock Management System" src="https://orderhive.weebly.com/uploads/2/4/2/5/24257196/882673_orig.png" style="height:40px;"></a>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
                     <a href="index.php?submit=dashboard.php" title="Dashboard">
@@ -207,7 +207,7 @@ session_start();
             setTimeout("changeImg()", time);
         }
 
-        // window.onload = changeImg;
+        window.onload = changeImg;
     </script>
 
 

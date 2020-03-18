@@ -1,8 +1,5 @@
 
 <form method="POST" action="database/companySetup.php">
-
-    
-
         <!-- Sesssion Messege -->
 
         <?php if(isset($_SESSION['messege'])): ?>
@@ -59,11 +56,11 @@
                                     </tr>
                                 </thead>
  <tbody>
-                                <?php while ($row=$show->fetch_assoc()): ?>
+                                <?php $serial=1; while ($row=$show->fetch_assoc()): ?>
                                    
                                         <tr>
                                             <td>
-                                                <?php echo $row['id']; ?>
+                                                <?php echo $serial++; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row['company']; ?>

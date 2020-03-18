@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-        Stock_Mangement_System
-</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<style>
 
-.head{
-  background-image: url("");
-  height: 200px;  
-}
-</style>
-</head>
-<body>
-	<marquee>Do it fast......(-_-)</marquee>
-
-	<div class="container">
-		<div class="row">
-			<div class=" ">
-			
-			</div>
-		</div>
-	</div>
-	<form method="POST" action="http://localhost/CI_Result_processor/crud/info">
+	<form method="POST" action="http://localhost/CI_Result_processor/crud/primary">
     <div class="container">
-      <legend class="bg-info text-light"><center><i class="fas fa-fw fa-briefcase"></i>View Sales Between Two Dates</center></legend>
+      <legend class="bg-primary text-light"><center><i class="fas fa-fw fa-briefcase"></i>View Sales Between Two Dates</center></legend>
   <div class="card-body border border-primary">
           <fieldset>
           <!--From Date -->
@@ -64,7 +35,7 @@
           <div class="container">
         <div class="row">
           <div class="col-10">
-            <button type="submit" name="create" value="yes" class="btn btn-outline-info float-right">Search
+            <button type="submit" name="create" value="yes" class="btn btn-primary float-right">Search
             </button>
           </div>
         </div>
@@ -116,5 +87,3 @@
 </div>
 </div>
 </form>
-</body>
-</html>	

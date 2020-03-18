@@ -1,8 +1,5 @@
 
 <form method="POST" action="database/categorySetup.php">
-
-    
-
         <!-- Sesssion Messege -->
 
         <?php if(isset($_SESSION['messege'])): ?>
@@ -58,12 +55,12 @@
                                         </th>
                                     </tr>
                                 </thead>
- <tbody>
-                                <?php while ($row=$show->fetch_assoc()): ?>
+                                <tbody>
+                                     <?php $serial=1; while ($row=$show->fetch_assoc()): ?>
                                    
                                         <tr>
                                             <td>
-                                                <?php echo $row['id']; ?>
+                                                <?php echo $serial++; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row['Category']; ?>
