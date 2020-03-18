@@ -1,5 +1,6 @@
 
-<form method="POST" action="">
+<form method="POST" action="database/sellSetup.php">
+    <input type="hidden" name="table" value="sell">
     <div class="container">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Sell</center>
@@ -19,7 +20,7 @@
                             <select id="company" class="form-control" name="company">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$company->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['id'];?>">
+                                    <option value="<?php echo $com['company'];?>">
                                         <?php echo $com['company'];?>
                                     </option>
                                     <?php endwhile;?>
@@ -29,48 +30,56 @@
                 </div>
                 <!--item name -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Item Name :
+                    <label class="col-md-3 col-form-label" for="item">Item Name :
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
-                        <select id="versity_id" class="form-control" name="versity_id">
-                            <option value="">Select a Option</option>
-                        </select>
+                        <?php 
+                         $item= $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
+                      ?>
+                            <select id="item" class="form-control" name="item">
+                                <option value="">Select Option</option>
+                                <?php while ($com=$item->fetch_assoc()): ?>
+                                    <option value="<?php echo $com['item'];?>">
+                                        <?php echo $com['item'];?>
+                                    </option>
+                                    <?php endwhile;?>
+                            </select>
 
                     </div>
 
                 </div>
                 <!--Available Quantity -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Available Quantity:
+                    <label class="col-md-3 col-form-label" for="available">Available Quantity:
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="name_id" id="name_id" placeholder="View" />
+                        <input class="form-control" type="text" name="available" id="available" placeholder="View" value="<?php echo $availavle=0; ?>" readonly/>
                     </div>
 
                 </div>
                 <!--Recoder Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Recoder Level:
+                    <label class="col-md-3 col-form-label" for="recorder">Recoder Level:
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="name_id" id="name_id" placeholder="View" />
+                        <input class="form-control" type="text" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
                     </div>
 
                 </div>
                 <!--Stock In Quantity -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Sell Quantity :
+                    <label class="col-md-3 col-form-label" for="sell_quantity">Sell Quantity :
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="name_id" id="name_id" placeholder="Input Stock In Quantity " />
+                        <input class="form-control" type="text" name="sell_quantity" id="sell_quantity" placeholder="Input Sell Quantity " />
                     </div>
 
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="create" value="yes" class="btn btn-primary float-right">ADD
+                            <button type="submit" name="create" class="btn btn-primary float-right">ADD
                             </button>
                         </div>
                     </div>
