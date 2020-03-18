@@ -207,7 +207,7 @@ session_start();
             setTimeout("changeImg()", time);
         }
 
-        window.onload = changeImg;
+        //window.onload = changeImg;
     </script>
 
 

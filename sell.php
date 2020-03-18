@@ -1,5 +1,5 @@
 
-<form method="POST" action="database/sellSetup.php">
+<form method="POST" action="database/stock.php">
     <input type="hidden" name="table" value="sell">
     <div class="container">
         <legend class="bg-primary text-light">
@@ -7,19 +7,14 @@
         </legend>
         <div class="card-body border border-primary">
             <fieldset>
-                <!-- Date -->
-                
-                    <div class="row">
-                      <label class="col-md-3 col-form-label" for="name_id">Date :</label>
-                        <div class='col-sm-7'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker2'>
-                                    <input type='date' class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        
+                <!-- Date and Time -->
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="date">Date:</label>
+                    <div class="col-md-7">
+                        <input class="form-control" type="text" name="date" id="date" readonly/>
                     </div>
+
+                </div>
                 <!--Company Name -->
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="name_id">Company Name :
@@ -33,7 +28,7 @@
                             <select id="company" class="form-control" name="company">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$company->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['company'];?>">
+                                    <option value="<?php echo $com['id'];?>">
                                         <?php echo $com['company'];?>
                                     </option>
                                     <?php endwhile;?>
@@ -53,7 +48,7 @@
                             <select id="item" class="form-control" name="item">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$item->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['item'];?>">
+                                    <option value="<?php echo $com['id'];?>">
                                         <?php echo $com['item'];?>
                                     </option>
                                     <?php endwhile;?>
@@ -64,8 +59,7 @@
                 </div>
                 <!--Available Quantity -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="available">Available Quantity:
-                        <span class="text-danger font-weight-bold">*</span> </label>
+                    <label class="col-md-3 col-form-label" for="available">Available Quantity:</label>
                     <div class="col-md-7">
                         <input class="form-control" type="text" name="available" id="available" placeholder="View" value="<?php echo $availavle=0; ?>" readonly/>
                     </div>
@@ -73,8 +67,7 @@
                 </div>
                 <!--Recoder Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="recorder">Recoder Level:
-                        <span class="text-danger font-weight-bold">*</span> </label>
+                    <label class="col-md-3 col-form-label" for="recorder">Recoder Level:</label>
                     <div class="col-md-7">
                         <input class="form-control" type="text" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
                     </div>
@@ -92,7 +85,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="add" class="btn btn-primary float-right">ADD
+                            <button type="submit" name="sell" class="btn btn-primary float-right">Sell
                             </button>
                         </div>
                     </div>
@@ -100,7 +93,7 @@
                 <br>
                 <br>
             </fieldset>
-            <table class="table table-hover">
+            <!-- <table class="table table-hover">
                 <thead>
                     <tr>
                         <th >Serial No</th>
@@ -112,23 +105,33 @@
                 <tbody>
                     
                 </tbody>
-            </table>
-            <div class="container">
+            </table> -->
+            <!-- <div class="container">
                 <div class="row">
                     <div class="col-12" style="">
                         <button type="submit" name="sell" class="btn btn-success float-right">Sell
                         </button>
                     </div>
-                    <!-- <div class="col-4">
+                    <div class="col-4">
                         <button type="submit" name="create" value="yes" class="btn btn-warning float-right">DAMAGE
                         </button>
                     </div>
                     <div class="col-4">
                         <button type="submit" name="create" value="yes" class="btn btn-danger float-right">LOST
                         </button>
-                    </div> -->
+                    </div>
                 </div>
-            </div>
+            </div> -->
         </div>
       </div>
 </form>
+
+<script>
+    window.onload = function() {
+  var d = new Date();
+  var n = d.toLocaleDateString();
+
+  console.log(n);
+  document.getElementById('date').value = n;
+}
+</script>
