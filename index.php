@@ -1,7 +1,7 @@
 <?php
 session_start();
-
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -16,7 +16,9 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="sidebar-07/sidebar-07/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
+ 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.css"/>
 
     <style>
         hr.new5 {
@@ -105,7 +107,7 @@ session_start();
                                         <span class="caret"><i class="fa fa-user"></i>Profile</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Your Profile</a></li>
+                                        <li><a href="login/prf/profile.php">Your Profile</a></li>
                                         <li><a href="#">Settings</a></li>
                                         <li><a href="login/log-inpage.php">Log Out</a></li>
                                     </ul>
@@ -120,6 +122,7 @@ session_start();
             </nav>
 
                     <?php
+        echo '<marquee><h1 class="bg-danger">Dead-Line => 22-03-2020</h1></marquee>';
         
           if(isset($_GET['submit'])
         ){
@@ -207,7 +210,7 @@ session_start();
             setTimeout("changeImg()", time);
         }
 
-        //window.onload = changeImg;
+        window.onload = changeImg;
     </script>
 
 
@@ -217,12 +220,28 @@ session_start();
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="sidebar-07/sidebar-07/js/main.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-    <!-- <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.js"></script>
     
 <script>
     $(document).ready(function() {
-        $('#example').DataTable();
-    });
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
 </script>
 </body>
 

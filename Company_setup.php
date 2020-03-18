@@ -1,4 +1,6 @@
 
+<?php require_once 'database/companySetup.php'; ?>
+
 <form method="POST" action="database/companySetup.php">
         <!-- Sesssion Messege -->
 
@@ -20,25 +22,49 @@
 
                     <div class="container">
                         <legend class="bg-primary text-light">
-                            <center><i class="fas fa-fw fa-briefcase"></i>company Setup</center>
+                            <center><i class="fas fa-fw fa-briefcase"></i>Company Setup</center>
                         </legend>
                         <div class="card-body border border-primary">
                             <fieldset>
                                 <!--name -->
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="name_id">company Name :
+                                    <label class="col-md-3 col-form-label" for="company">Company Name :
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="company" class="form-control" name="company">
+                                        <input type="text" id="company" class="form-control" name="company" value="<?= $company; ?>">
                                     </div>
 
                                 </div>
+                                <!--Re-Presentative -->
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="Presentative">Re-Presentative :
+                                        <span class="text-danger font-weight-bold">*</span>
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input type="text" id="Presentative" class="form-control" name="representative" value="<?= $representative; ?>">
+                                    </div>
+
+                                </div>
+                                <!--Contact Number -->
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="coname_id">Contact Number :
+                                        <span class="text-danger font-weight-bold">*</span>
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input type="text" id="coname_id" class="form-control" name="conum" value="<?= $conum; ?>" >
+                                    </div>
+
+                                </div>
+
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-10">
-                                            <button type="submit" name="save" class="btn btn-warning float-right">Save
-                                            </button>
+                                            <?php if ($update == true): ?>
+                                                <button type="submit" name="update" class="btn btn-primary float-right ">UPDATE</button>
+                                            <?php else: ?>
+                                                <button type="submit" name="save" class="btn btn-warning float-right ">SAVE</button>
+                                        <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -49,14 +75,16 @@
                                 <thead>
                                     <tr>
                                         <th >SERIAL NO</th>
-                                        <th >company</th>
+                                        <th >Company</th>
+                                        <th >Re-presentative</th>
+                                        <th >Contact</th>
                                         <th>
                                             <center>ACTION</center>
                                         </th>
                                     </tr>
                                 </thead>
- <tbody>
-                                <?php $serial=1; while ($row=$show->fetch_assoc()): ?>
+                                <tbody>
+                                    <?php $serial=1; while ($row=$show->fetch_assoc()): ?>
                                    
                                         <tr>
                                             <td>
@@ -65,9 +93,15 @@
                                             <td>
                                                 <?php echo $row['company']; ?>
                                             </td>
+                                             <td>
+                                                <?php echo $row['representative']; ?>
+                                            </td>
+                                             <td>
+                                                <?php echo $row['conum']; ?>
+                                            </td>
                                             <td align="center">
-                                                <!-- <a href="index.php?submit=company_setup.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a> -->
-                                                <a href="database/companySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
+                                                <a href="index.php?submit=Company_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a>
+                                                <a href="database/Company_setup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
                                             </td>
 
                                         </tr>

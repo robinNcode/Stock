@@ -1,4 +1,5 @@
-
+<?php require_once 'database/categorySetup.php';
+?>
 <form method="POST" action="database/categorySetup.php">
         <!-- Sesssion Messege -->
 
@@ -17,7 +18,7 @@
     $show = $conn->query("SELECT * FROM category") or die ("Failed ". $conn->error);
 
   ?>
-
+        <input type="hidden" name ="id" value ="<?= $id ?>">
                     <div class="container">
                         <legend class="bg-primary text-light">
                             <center><i class="fas fa-fw fa-briefcase"></i>Category Setup</center>
@@ -30,15 +31,18 @@
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="category" class="form-control" name="category">
+                                        <input type="text" id="category" class="form-control" name="category" value="<?= $category; ?>">
                                     </div>
 
                                 </div>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-10">
-                                            <button type="submit" name="save" class="btn btn-warning float-right">Save
-                                            </button>
+                                            <?php if ($update == true): ?>
+                                                <button type="submit" name="update" class="btn btn-primary float-right ">UPDATE</button>
+                                            <?php else: ?>
+                                                <button type="submit" name="save" class="btn btn-warning float-right ">SAVE</button>
+                                        <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +70,7 @@
                                                 <?php echo $row['Category']; ?>
                                             </td>
                                             <td align="center">
-                                                <!-- <a href="index.php?submit=category_setup.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a> -->
+                                                <a href="index.php?submit=category_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a>
                                                 <a href="database/categorySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
                                             </td>
 
