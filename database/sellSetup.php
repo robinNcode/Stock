@@ -15,17 +15,21 @@ if ($conn->connect_error) {
     $update = false;
     $id = 0;
   
- if (isset($_POST['save'])){
+ if (isset($_POST['create'])){
 
  	$table=$_POST['table'];
 
- 	$sell = $_POST['sell'];
+ 	$item=$_POST['item'];
+ 	$company=$_POST['company'];
+ 	$quantity=$_POST['quantity'];
+ 	$reorder=$_POST['recorder'];
+ 	$sell_quantity=$_POST['sell_quantity'];
  
- 	$conn-> query("INSERT INTO $table(item, company, quantity, reorder, sell_quantity) VALUES('$sell')")or die("Connection failed: " . $conn->connect_error);
+ 	$conn-> query("INSERT INTO $table(item, company, quantity, reorder, sell_quantity) VALUES('$item','$company', '$quantity', '$reorder', '$sell_quantit')")or die("Connection failed: " . $conn->connect_error);
 
  	$_SESSION ['messege'] = "Information has been Saved!";
  	$_SESSION ['msg_type'] = "success";
- 	header("location: ../index.php?submit=sell_setup.php");
+ 	header("location: ../index.php?submit=sell.php");
 
  }
  else if (isset($_GET['delete'])){

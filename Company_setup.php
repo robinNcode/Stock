@@ -66,7 +66,7 @@
                                                 <?php echo $row['company']; ?>
                                             </td>
                                             <td align="center">
-                                                <a href="index.php?submit=company_setup.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a>
+                                                <!-- <a href="index.php?submit=company_setup.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a> -->
                                                 <a href="database/companySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
                                             </td>
 

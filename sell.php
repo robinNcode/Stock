@@ -7,6 +7,19 @@
         </legend>
         <div class="card-body border border-primary">
             <fieldset>
+                <!-- Date -->
+                
+                    <div class="row">
+                      <label class="col-md-3 col-form-label" for="name_id">Date :</label>
+                        <div class='col-sm-7'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input type='date' class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 <!--Company Name -->
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="name_id">Company Name :
@@ -79,7 +92,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="create" class="btn btn-primary float-right">ADD
+                            <button type="submit" name="add" class="btn btn-primary float-right">ADD
                             </button>
                         </div>
                     </div>
@@ -97,52 +110,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th >1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th >2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th >3</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th >4</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th >5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
+                    
                 </tbody>
             </table>
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <button type="submit" name="create" value="yes" class="btn btn-success float-right">Sell
+                    <div class="col-12" style="">
+                        <button type="submit" name="sell" class="btn btn-success float-right">Sell
                         </button>
                     </div>
-                    <div class="col-4">
+                    <!-- <div class="col-4">
                         <button type="submit" name="create" value="yes" class="btn btn-warning float-right">DAMAGE
                         </button>
                     </div>
                     <div class="col-4">
                         <button type="submit" name="create" value="yes" class="btn btn-danger float-right">LOST
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
