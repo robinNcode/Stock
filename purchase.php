@@ -1,3 +1,9 @@
+<?php 
+    $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
+    $show3 = $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
+    $row=$show3->fetch_assoc();
+  ?>
+
 <form method="POST" action="http://localhost/CI_Result_processor/crud/primary">
     <div class="container">
         <legend class="bg-primary text-light">
@@ -48,12 +54,12 @@
                     </div>
 
                 </div>
-                <!--Recoder Level -->
+                <!--Re-Order Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Recoder Level:
+                    <label class="col-md-3 col-form-label" for="level">Re-Order Level:
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="name_id" id="name_id" placeholder="View" />
+                        <input class="form-control" type="text" name="level" id="level" value="<?= $row['level']; ?>" readonly/>
                     </div>
 
                 </div>

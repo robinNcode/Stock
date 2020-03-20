@@ -25,10 +25,10 @@
                         $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
                         $category= $conn->query("SELECT * FROM category") or die ("Failed ". $conn->error);
                       ?>
-                            <select id="category" class="form-control" name="category">
+                            <select id="category" class="form-control" name="Category">
                                 <option value="">Select Option</option>
                                 <?php while ($cat=$category->fetch_assoc()): ?>
-                                    <option value="<?php echo $cat['id'];?>">
+                                    <option value="<?php echo $cat['Category']; ?>" >
                                         <?php echo $cat['Category'];?>
                                     </option>
                                     <?php endwhile;?>
@@ -47,8 +47,8 @@
                             <select id="company" class="form-control" name="company">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$company->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['id'];?>">
-                                        <?php echo $com['company'];?>
+                                    <option value="<?php echo $com['company']; ?>" >
+                                        <?php echo $com['company']; ?>
                                     </option>
                                     <?php endwhile;?>
                             </select>
@@ -64,9 +64,9 @@
                     </div>
                 </div>
 
-                <!--Recoder Level -->
+                <!--Re-Order Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="level">Recoder Level:
+                    <label class="col-md-3 col-form-label" for="level">Re-Order Level:
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
                         <input class="form-control" type="text" name="level" id="level" placeholder="Input Recoder Level" />

@@ -1,4 +1,11 @@
 
+<?php 
+    $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
+    $show3 = $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
+
+  ?>
+
+
 	<form method="POST" action="http://localhost/CI_Result_processor/crud/primary">
     <div class="container">
       <legend class="bg-primary text-light"><center><i class="fas fa-fw fa-briefcase"></i>Sarch & View Item's Summary</center></legend>
@@ -58,58 +65,30 @@
       <br>
       <br>
   </fieldset>
-  <table class="table table-hover">
+  <table class="table table-hover " id="example">
   <thead>
     <tr>
-      <th >Serial No</th>
-      <th  >Item</th>
-      <th  >Company</th>
-      <th  >Category</th>
-      <th  >Available Quantity</th>
-      <th  >Recorder Level</th>
+      <th>Serial No</th>
+      <th>Item</th>
+      <th>Company</th>
+      <th>Category</th>
+      <th>Available Quantity</th>
+      <th>Re-Order Level</th>
     </tr>
   </thead>
   <tbody>
+    <?php $serial=1; while ($row3=$show3->fetch_assoc() ): ?>
+
     <tr>
-      <th  >1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      <th><?= $serial++; ?></th>
+      <td><?= $row3['item']; ?></td>
+      <td><?= $row3['company']; ?></td>
+      <td><?= $row3['category']; ?></td>
+      <td><?php //$row3['available']; ?></td>
+      <td><?= $row3['level']; ?></td>
     </tr>
-    <tr>
-      <th  >2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th  >3</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th  >4</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th  >5</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
+  <?php endwhile;?>
+
   </tbody>
 </table>
 </div>
