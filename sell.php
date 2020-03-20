@@ -28,7 +28,7 @@
                             <select id="company" class="form-control" name="company">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$company->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['id'];?>">
+                                    <option value="<?php echo $com['company'];?>">
                                         <?php echo $com['company'];?>
                                     </option>
                                     <?php endwhile;?>
@@ -48,7 +48,7 @@
                             <select id="item" class="form-control" name="item">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$item->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['id'];?>">
+                                    <option value="<?php echo $com['item'];?>">
                                         <?php echo $com['item'];?>
                                     </option>
                                     <?php endwhile;?>
