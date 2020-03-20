@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   
  if (isset($_POST['save']))
  {
-	$category=$_POST['category'];
+	$category=$_POST['Category'];
 	$company=$_POST['company'];
  	$item = $_POST['item'];
  	$level=$_POST['level'];

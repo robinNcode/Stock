@@ -1,7 +1,7 @@
 
-<?php require_once 'database/companySetup.php'; ?>
+<?php require_once 'database/CompanySetup.php'; ?>
 
-<form method="POST" action="database/companySetup.php">
+<form method="POST" action="database/CompanySetup.php">
         <!-- Sesssion Messege -->
 
         <?php if(isset($_SESSION['messege'])): ?>
@@ -100,8 +100,8 @@
                                                 <?php echo $row['conum']; ?>
                                             </td>
                                             <td align="center">
-                                                <a href="index.php?submit=Company_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a>
-                                                <a href="database/Company_setup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
+                                                <a href="index.php?submit=Company_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT</a>
+                                                <a href="database/Companysetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
                                             </td>
 
                                         </tr>

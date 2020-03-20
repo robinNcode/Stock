@@ -65,7 +65,7 @@
       <br>
       <br>
   </fieldset>
-  <table class="table table-hover " id="example">
+  <table class="table table-hover border border-primary" id="example">
   <thead>
     <tr>
       <th>Serial No</th>

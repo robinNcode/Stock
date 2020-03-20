@@ -24,7 +24,7 @@ if ($conn->connect_error) {
  	$representative = $_POST['representative'];
  	$conum = $_POST['conum'];
  
- 	$conn-> query("INSERT INTO company(company,representative,conum) VALUES('$company','$representative','$conum')")or die("Connection failed: " . $conn->connect_error);
+ 	$conn-> query("INSERT INTO company(company,representative,conum) VALUES('$company','$representative','$conum')")or die("Database Connection failed: " . $conn->connect_error);
 
  	$_SESSION ['messege'] = "Information has been Saved!";
  	$_SESSION ['msg_type'] = "success";
@@ -50,16 +50,19 @@ if ($conn->connect_error) {
  	while($row=$result->fetch_assoc()){
  		
  		 	$company = $row['company'];
+ 		 	$representative=$row['representative'];
+ 			$conum=$row['conum'];
+
  	}
  }
  else if (isset($_POST['update'])){
 
-    $id=$_POST['id'];
+    $id = $_POST['id'];
  	$company = $_POST['company'];
- 	$representative=$_POST['representative'];
- 	$conum=$_POST['conum'];
+ 	$representative = $_POST['representative'];
+ 	$conum = $_POST['conum'];
 
- 	$conn-> query("UPDATE company SET company ='$company' WHERE id=$id")or die("Connection failed: " . $conn->connect_error);
+ 	$conn-> query("UPDATE company SET company ='$company' WHERE id=$id")or die("Data base Connection failed: " . $conn->connect_error);
 
  	$_SESSION ['messege'] = "Information has been Updated!";
  	$_SESSION ['msg_type'] = "info";
