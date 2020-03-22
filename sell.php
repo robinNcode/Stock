@@ -64,9 +64,9 @@
                     </div>
 
                 </div>
-                <!--Recoder Level -->
+                <!--Re-Order Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="recorder">Recoder Level:</label>
+                    <label class="col-md-3 col-form-label" for="recorder">Re-Order Level:</label>
                     <div class="col-md-7">
                         <input class="form-control" type="number" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
                     </div>
@@ -125,7 +125,7 @@
       </div>
 </form>
 
-<!-- <script>
+ <script>
     window.onload = function() {
   var d = new Date();
   var n = d.toLocaleDateString();
@@ -133,4 +133,4 @@
   console.log(n);
   document.getElementById('date').value = n;
 }
-</script> -->
+</script>

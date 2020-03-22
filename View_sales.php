@@ -48,6 +48,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Serial No</th>
+                        <th scope="col">Company</th>
                         <th scope="col">Item </th>
                         <th scope="col">Quantity</th>
                     </tr>
@@ -64,10 +65,12 @@
                 <tbody>
                     <?php while ($cat=$stock->fetch_assoc()): ?>
                     <tr>
-                        <?php if($cat['date'] >= $fdate && $cat['date'] <= $tdate ): ?>
+                        <?php if($cat['s_date'] >= $fdate && $cat['s_date'] <= $tdate ): ?>
                         <td><?= $count++; ?></td>
+                        <td><?= $cat['s_company']; ?></td>
                         <td><?= $cat['s_item']; ?></td>
                         <td><?= $cat['sell_quantity']; ?></td>
+                        
                     <?php endif; ?>
                     </tr>
                     <?php endwhile; ?>

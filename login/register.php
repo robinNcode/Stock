@@ -13,17 +13,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <style>
 
-body{
-  /* The image used */
-  background-image: url("https://www.seventhgenerationadvisors.org/wp-content/uploads/2018/05/stock-exchange-value-768x509.jpg");
-  height: 100%;
-  width:100%;
-}
-body-image{
-	-webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-  filter: blur(5px);
-}
-
 </style>
 </head>
 <body>

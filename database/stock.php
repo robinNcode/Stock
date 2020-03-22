@@ -26,7 +26,7 @@ if(isset($_POST['sell'])){
 
 	$available=$available - $sell_quantity;
 
-	$conn->query("INSERT INTO stock(date,s_company,s_item,sell_quantity) VALUES('$date','$s_company','$s_item','$sell_quantity')")or die("Connection failed: " . $conn->connect_error);
+	$conn->query("INSERT INTO stock(s_date,s_company,s_item,sell_quantity) VALUES('$date','$s_company','$s_item','$sell_quantity')")or die("Connection failed: " . $conn->connect_error);
 	$_SESSION['message']="Record has been Updated!";
 	$_SESSION['msg_type']="warning";
 

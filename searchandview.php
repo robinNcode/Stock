@@ -72,6 +72,7 @@
       <th>Item</th>
       <th>Company</th>
       <th>Category</th>
+      <th>Purchase Date</th>
       <th>Available Quantity</th>
       <th>Re-Order Level</th>
     </tr>
@@ -84,6 +85,7 @@
       <td><?= $row3['item']; ?></td>
       <td><?= $row3['company']; ?></td>
       <td><?= $row3['category']; ?></td>
+      <td><?= "3-22-20"; ?></td>
       <td><?php //$row3['available']; ?></td>
       <td><?= $row3['level']; ?></td>
     </tr>

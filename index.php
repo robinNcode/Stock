@@ -53,16 +53,17 @@ session_start();
                     </a>
 
                 </li>
-                <li>
-                    <a href="index.php?submit=searchandview.php" title="Search & View">
-                        <span class="fa fa-paper-plane"></span>Search & View
-                    </a>
-                </li>
+                
                 <li>
                     <a href="index.php?submit=purchase.php" title="Purchase">
                         <span class="fa fa-paper-plane"></span>Purchase
                     </a>
 
+                </li>
+                <li>
+                    <a href="index.php?submit=searchandview.php" title="Search & View">
+                        <span class="fa fa-paper-plane"></span>Search & View
+                    </a>
                 </li>
                 <li>
                     <a href="index.php?submit=sell.php" title="Sell">
@@ -121,7 +122,7 @@ session_start();
             </nav>
 
     <?php
-        echo '<marquee><h1 class="bg-danger">Dead-Line => 22-03-2020</h1></marquee>';
+        //echo '<marquee><h1 class="bg-danger">Dead-Line => 22-03-2020</h1></marquee>';
         
           if(isset($_GET['submit'])
         ){

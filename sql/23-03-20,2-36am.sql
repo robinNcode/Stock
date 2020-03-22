@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 12:32 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Generation Time: Mar 22, 2020 at 09:36 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,12 +39,17 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `Category`) VALUES
 (3, 'Electronics'),
-(6, 'Neon'),
+(6, 'Plastic & PVC'),
 (7, 'Plastic'),
 (8, 'Fridge'),
 (10, 'Cosmatics'),
 (11, 'Food'),
-(12, 'Phone');
+(12, 'Phone'),
+(14, 'Fast Food'),
+(15, 'Drinks & Braverages'),
+(16, 'Vegetables'),
+(20, 'Sationary'),
+(21, 'Phone');
 
 -- --------------------------------------------------------
 
@@ -67,7 +72,14 @@ INSERT INTO `company` (`id`, `company`, `representative`, `conum`) VALUES
 (15, 'RFL', 'Sajib', '1287383112'),
 (16, 'Uniliver', 'Rupa', '1902320303'),
 (17, 'Walton', 'Hafiz', '01789097402'),
-(18, 'Adovasoft', 'Taki Kauser', '01980889660');
+(19, 'Pran', 'Ayan', '01676763432'),
+(20, 'Lava', 'Robin', '01318515718'),
+(21, 'SamSung', 'Taki Kawser', '01978645624'),
+(22, 'HTC', 'Ayan Mulla', '01676763432'),
+(23, 'Nongar', 'Bishawjit', '01687287212'),
+(24, 'LakeME', 'Riyana Chawdhuri', '01578778887'),
+(25, 'Emami', 'Hafijul Islam', '01863376845'),
+(26, 'Symphony', 'Shafiqul Islam', '01963225220');
 
 -- --------------------------------------------------------
 
@@ -88,28 +100,10 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `item`, `company`, `category`, `level`) VALUES
-(2, 'Primo HM', '5', '12', 5),
-(3, 'Fair&lovely', '6', '10', 50),
-(4, 'Fridge 017', 'Walton', 'Electronics', 10);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sell`
---
-
-CREATE TABLE `sell` (
-  `date` date NOT NULL,
-  `item` varchar(100) NOT NULL,
-  `sell_quantity` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sell`
---
-
-INSERT INTO `sell` (`date`, `item`, `sell_quantity`) VALUES
-('2020-03-19', 'Fridge 107', 1);
+(7, 'Make Up Box', 'Uniliver', 'Cosmatics', 22),
+(8, 'Primo H11', 'Walton', '', 25),
+(9, 'iris 860', 'Lava', '', 33),
+(10, 'galaxy j7', 'SamSung', 'Phone', 34);
 
 -- --------------------------------------------------------
 
@@ -118,17 +112,28 @@ INSERT INTO `sell` (`date`, `item`, `sell_quantity`) VALUES
 --
 
 CREATE TABLE `stock` (
-  `item` int(100) NOT NULL,
-  `company` int(100) NOT NULL,
-  `available` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(100) NOT NULL,
+  `p_date` date NOT NULL,
+  `p_company` varchar(100) NOT NULL,
+  `p_item` varchar(100) NOT NULL,
+  `reorder_level` int(100) NOT NULL,
+  `available_quantity` int(100) NOT NULL,
+  `purchase_quantity` int(100) NOT NULL,
+  `s_date` date NOT NULL,
+  `s_company` varchar(100) NOT NULL,
+  `s_item` varchar(100) NOT NULL,
+  `sell_quantity` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock`
 --
 
-INSERT INTO `stock` (`item`, `company`, `available`) VALUES
-(4, 17, 50);
+INSERT INTO `stock` (`id`, `p_date`, `p_company`, `p_item`, `reorder_level`, `available_quantity`, `purchase_quantity`, `s_date`, `s_company`, `s_item`, `sell_quantity`) VALUES
+(1, '2020-03-22', '', '', 0, 0, 0, '0000-00-00', 'Lava', 'iris 860', 33),
+(2, '0000-00-00', '', '', 0, 0, 0, '2020-03-22', 'Walton', 'Primo H11', 11),
+(3, '2020-03-23', 'Uniliver', 'Make Up Box', 0, 0, 22, '0000-00-00', '', '', 0),
+(4, '2020-03-23', 'Walton', 'Primo H11', 0, 0, 43, '0000-00-00', '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -153,16 +158,10 @@ ALTER TABLE `item`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sell`
---
-ALTER TABLE `sell`
-  ADD PRIMARY KEY (`date`);
-
---
 -- Indexes for table `stock`
 --
 ALTER TABLE `stock`
-  ADD PRIMARY KEY (`item`,`company`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -172,18 +171,24 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `stock`
+--
+ALTER TABLE `stock`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
