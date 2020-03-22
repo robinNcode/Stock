@@ -1,4 +1,4 @@
-<form method="POST" action="http://localhost/CI_Result_processor/crud/primary">
+<form method="POST" action="">
     <div class="container">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>View Sales Between Two Dates</center>
@@ -36,7 +36,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="create" value="yes" class="btn btn-primary float-right">Search
+                            <button type="submit" name="search" class="btn btn-primary float-right">Search
                             </button>
                         </div>
                     </div>
@@ -52,37 +52,26 @@
                         <th scope="col">Quantity</th>
                     </tr>
                 </thead>
+                <?php if(isset($_POST['search'])): ?>
+                <?php 
+                        $fdate=$_POST['fdate'];
+                        $tdate=$_POST['tdate'];
+                        
+                        $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
+                        $stock= $conn->query("SELECT * FROM stock") or die ("Failed ". $conn->error);
+                        $count=1;
+                      ?>
                 <tbody>
+                    <?php while ($cat=$stock->fetch_assoc()): ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-
+                        <?php if($cat['date'] >= $fdate && $cat['date'] <= $tdate ): ?>
+                        <td><?= $count++; ?></td>
+                        <td><?= $cat['s_item']; ?></td>
+                        <td><?= $cat['sell_quantity']; ?></td>
+                    <?php endif; ?>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-
-                    </tr>
+                    <?php endwhile; ?>
+                <?php endif ;?>
                 </tbody>
             </table>
         </div>

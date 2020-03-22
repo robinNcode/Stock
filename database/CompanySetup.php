@@ -48,7 +48,7 @@ if ($conn->connect_error) {
  	$update = true;
  	$result = $conn->query("SELECT * FROM company WHERE id =$id") or die ("Failed ". $conn->error);
  	while($row=$result->fetch_assoc()){
- 		
+ 			$id=$row['id'];
  		 	$company = $row['company'];
  		 	$representative=$row['representative'];
  			$conum=$row['conum'];
@@ -62,7 +62,7 @@ if ($conn->connect_error) {
  	$representative = $_POST['representative'];
  	$conum = $_POST['conum'];
 
- 	$conn-> query("UPDATE company SET company ='$company' WHERE id=$id")or die("Data base Connection failed: " . $conn->connect_error);
+ 	$conn-> query("UPDATE company SET company ='$company', representative= '$representative', conum='$conum' WHERE id=$id")or die("Data base Connection failed: " . $conn->connect_error);
 
  	$_SESSION ['messege'] = "Information has been Updated!";
  	$_SESSION ['msg_type'] = "info";

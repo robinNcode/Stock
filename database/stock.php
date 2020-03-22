@@ -19,18 +19,18 @@ if ($conn->connect_error) {
 if(isset($_POST['sell'])){
 	
 	$date=$_POST['date'];
-	$company=$_POST['company'];
-	$item=$_POST['item'];
-	$available=$_POST['available'];
+	$s_company=$_POST['company'];
+	$s_item=$_POST['item'];
 	$available=$_POST['available'];
 	$sell_quantity=$_POST['sell_quantity'];
 
-	$available=$available-$sell_quantity;
+	$available=$available - $sell_quantity;
 
-	//$conn->query("UPDATE stock SET available='$available' WHERE item=$item, company=$company") or die($conn->error());
-	$conn->query("INSERT INTO sell(date,item,sell_quantity) VALUES('$date','$item','$sell_quantity')")or die("Connection failed: " . $conn->connect_error);
+	$conn->query("INSERT INTO stock(date,s_company,s_item,sell_quantity) VALUES('$date','$s_company','$s_item','$sell_quantity')")or die("Connection failed: " . $conn->connect_error);
 	$_SESSION['message']="Record has been Updated!";
 	$_SESSION['msg_type']="warning";
+
+	header("location: ../index.php?submit=sell.php");
 }
 
  ?>
