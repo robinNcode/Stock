@@ -1,26 +1,41 @@
-<form method="POST" action="database/categorySetup.php">
-        <!-- Sesssion Messege -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <?php if(isset($_SESSION['messege'])): ?>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-            <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
-                <?php 
-        echo "<center><marquee><h3>".$_SESSION['messege']."</h3></marquee></center>";
-        unset ($_SESSION['messege']);
-        ?>
-            </div>
-            <?php endif; ?>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<style>
 
-                <?php 
-    $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
-    $show = $conn->query("SELECT * FROM category") or die ("Failed ". $conn->error);
+body{
+  /* The image used */
+  background-image: url("https://www.seventhgenerationadvisors.org/wp-content/uploads/2018/05/stock-exchange-value-768x509.jpg");
+  height: 100%;
+  width:100%;
+}
+body-image{
+	-webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: blur(5px);
+}
 
-  ?>
-        <input type="hidden" name ="id" value ="<?= $id ?>">
+</style>
+</head>
+<body>
+	
+		<form method="POST" action="database/register.php">
+			
+        		<input type="hidden" name ="id" value ="<?= $id ?>">
                     <div class="container">
                         <legend class="bg-primary text-light">
-                            <center><i class="fas fa-fw fa-briefcase"></i>Category Setup</center>
+                            <center><i class="fas fa-fw fa-briefcase"></i>Registration Form</center>
                         </legend>
+                   
                         <div class="card-body border border-primary">
                             <fieldset>
                                 <!--name -->
@@ -29,7 +44,7 @@
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="category" class="form-control" name="category" placeholder="Enter your Name">
+                                        <input type="text" id="category" class="form-control" name="category">
                                     </div>
 
                                 </div>
@@ -39,7 +54,7 @@
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="category" class="form-control" name="category" value="<?= $category; ?>">
+                                        <input type="text" id="category" class="form-control" name="category">
                                     </div>
 
                                 </div>
@@ -49,7 +64,7 @@
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="category" class="form-control" name="category" value="<?= $category; ?>">
+                                        <input type="text" id="category" class="form-control" name="category">
                                     </div>
 
                                 </div>
@@ -59,23 +74,25 @@
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="category" class="form-control" name="category" value="<?= $category; ?>">
+                                        <input type="text" id="category" class="form-control">
                                     </div>
 
                                 </div>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-10">
-                                            <button type="submit" name="save" class="btn btn-warning float-right ">SAVE</button>
+                                            <button type="submit" name="save" class="btn btn-success float-right ">CONFIRM</button>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
                                 <br>
                             </fieldset>
-                            
+                          
                         </div>
                     </div>
-</form>
+                
+			</form>
 
-
+</body>
+</html>

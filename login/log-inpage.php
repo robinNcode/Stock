@@ -86,6 +86,8 @@ body, html {
           </div>
             <br>
        <button type="submit" name="save" class="btn btn-success mb-2">Log In</button>
+       <hr>
+       <a href="register.php"><h4>REGISTER</h4></a>
 </form> 
 </div>
   </div>
