@@ -15,16 +15,8 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="sidebar-07/sidebar-07/css/style.css">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="login/prf/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="login/prf/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="login/prf/css/flaticon.css"/>
-    <link rel="stylesheet" href="login/prf/css/owl.carousel.css"/>
-    <link rel="stylesheet" href="login/prf/css/magnific-popup.css"/>
-    <link rel="stylesheet" href="login/prf/css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
- 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.css"/>
 
     <style>
@@ -114,7 +106,7 @@ session_start();
                                         <span class="caret"><i class="fa fa-user"></i>Profile</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="index.php?submit=login/prf/profile.php">Your Profile</a></li>
+                                        <li><a href="index.php?submit=login/userprofile.php">Your Profile</a></li>
                                         <li><a href="#">Settings</a></li>
                                         <li><a href="login/log-inpage.php">Log Out</a></li>
                                     </ul>
@@ -128,7 +120,7 @@ session_start();
                 </div>
             </nav>
 
-                    <?php
+    <?php
         echo '<marquee><h1 class="bg-danger">Dead-Line => 22-03-2020</h1></marquee>';
         
           if(isset($_GET['submit'])

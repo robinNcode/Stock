@@ -9,9 +9,9 @@
 	<form method="POST" action="http://localhost/CI_Result_processor/crud/primary">
     <div class="container">
       <legend class="bg-primary text-light"><center><i class="fas fa-fw fa-briefcase"></i>Sarch & View Item's Summary</center></legend>
-  <div class="card-body border border-primary">
+  <!-- <div class="card-body border border-primary">
           <fieldset>
-          <!--Category -->
+          
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="name_id">Category :
               <span class="text-danger font-weight-bold">*</span>
@@ -32,7 +32,7 @@
             </div>
             
           </div>
-             <!--Company Name -->
+             
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="name_id">Company Name :
               <span class="text-danger font-weight-bold">*</span>
@@ -50,8 +50,7 @@
                                     <?php endwhile;?>
                             </select>
               
-            </div>
-        
+            </div> 
      </div>      
       
           <div class="container">
@@ -61,7 +60,8 @@
             </button>
           </div>
         </div>
-      </div>
+      </div>-->
+        
       <br>
       <br>
   </fieldset>
