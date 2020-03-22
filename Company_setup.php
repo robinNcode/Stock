@@ -26,6 +26,7 @@
                         </legend>
                         <div class="card-body border border-primary">
                             <fieldset>
+                                <input type="hidden" name="id" value="<?= $id; ?>">
                                 <!--name -->
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label" for="company">Company Name :

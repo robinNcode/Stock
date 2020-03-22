@@ -1,6 +1,5 @@
 
 <form method="POST" action="database/stock.php">
-    <input type="hidden" name="table" value="sell">
     <div class="container">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Sell</center>
@@ -11,7 +10,7 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="date">Date:</label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="date" id="date" readonly/>
+                        <input class="form-control" type="date" name="date" id="date"/>
                     </div>
 
                 </div>
@@ -61,7 +60,7 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="available">Available Quantity:</label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="available" id="available" placeholder="View" value="<?php echo $availavle=0; ?>" readonly/>
+                        <input class="form-control" type="number" name="available" id="available" placeholder="View" value="<?php echo $availavle=0; ?>" readonly/>
                     </div>
 
                 </div>
@@ -69,7 +68,7 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="recorder">Recoder Level:</label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
+                        <input class="form-control" type="number" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
                     </div>
 
                 </div>
@@ -126,7 +125,7 @@
       </div>
 </form>
 
-<script>
+<!-- <script>
     window.onload = function() {
   var d = new Date();
   var n = d.toLocaleDateString();
@@ -134,4 +133,4 @@
   console.log(n);
   document.getElementById('date').value = n;
 }
-</script>
+</script> -->
