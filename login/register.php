@@ -25,8 +25,9 @@
                             <center><i class="fas fa-fw fa-briefcase"></i>Registration Form</center>
                         </legend>
                    
-                        <div class="card-body border border-primary">
+                        <div class="card-body">
                             <fieldset>
+                                <div class="border border-primary">
                                 <!--name -->
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label" for="name_id">Name :
@@ -76,6 +77,7 @@
                                 </div>
                                 <br>
                                 <br>
+                            </div>
                             </fieldset>
                           
                         </div>

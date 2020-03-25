@@ -1,5 +1,5 @@
 
-<form method="POST" action="database/stock.php">
+<form method="POST" action="database/stockout.php">
     <div class="container">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Sell</center>
@@ -47,8 +47,8 @@
                             <select id="item" class="form-control" name="item">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$item->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['item'];?>">
-                                        <?php echo $com['item'];?>
+                                    <option value="<?php echo $com['item']; ?>" >
+                                        <?php echo $com['item']; ?>
                                     </option>
                                     <?php endwhile;?>
                             </select>

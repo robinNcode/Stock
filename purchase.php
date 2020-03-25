@@ -1,6 +1,6 @@
 <?php 
     $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
-    $show = $conn->query("SELECT * FROM stock") or die ("Failed ". $conn->error);
+    $show = $conn->query("SELECT * FROM stockin") or die ("Failed ". $conn->error);
     $row=$show->fetch_assoc();
   ?>
 

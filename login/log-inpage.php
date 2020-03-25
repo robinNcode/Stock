@@ -58,7 +58,11 @@ body, html {
 </style>
 </head>
 <body>
+<div class="bg-primary text-light">
+    <marquee><h1>STOCK MANAGEMENT SYSTEM</h1></marquee>
+</div>
 
+<div>
 <div class="bg-image">
   
 </div>
@@ -68,7 +72,7 @@ body, html {
   <div class="card-body text-center">
     <h1 class="card-title">Log In Panel</h1>
         
-    <form class="form-inline" method="POST" action="log-inProcess.php">
+    <form class="form-inline" method="POST" action="../index.php">
         <div class="row">
           <div class="col-3">
             <label for="email" class="mr-sm-2">User Name:</label>
@@ -93,6 +97,6 @@ body, html {
   </div>
 </div>
 </div>
-
+</div>
 </body>
 </html>

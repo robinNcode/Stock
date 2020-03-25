@@ -124,13 +124,23 @@ session_start();
     <?php
         //echo '<marquee><h1 class="bg-danger">Dead-Line => 22-03-2020</h1></marquee>';
         
-          if(isset($_GET['submit'])
-        ){
+          if(isset($_GET['submit']))
+          {
+
             $page_path = $_GET['submit'];
           require $page_path;
-        }else{
-          require 'Dashboard.php';
         }
+    else if (isset($_POST['save'])){
+        $username = $_POST['username'];
+        $pass = $_POST['pass'];
+
+        if($username=="adovasoft@gmail.com" && $pass=="robin"){
+           require 'login/userprofile.php';
+        }
+    }
+    else {
+            require 'Dashboard.php';
+            }
         ?>
     </div>
     </div>
