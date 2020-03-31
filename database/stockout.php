@@ -21,9 +21,10 @@ if(isset($_POST['sell'])){
 	$available=$_POST['available'];
 	$sell_quantity=$_POST['sell_quantity'];
 
-	$available=$available - $sell_quantity;
+	//$available=$available - $sell_quantity;
 
-	$conn->query("INSERT INTO stockout(s_date,s_company,s_item,sell_quantity) VALUES('$date','$s_company','$s_item','$sell_quantity')")or die("Connection failed: " . $conn->connect_error);
+	$conn->query("INSERT INTO stockout(date,s_company,s_item,sell_quantity) VALUES('$date','$s_company','$s_item','$sell_quantity')")or die("Connection failed: " . $conn->connect_error);
+	
 	$_SESSION['message']="Record has been Updated!";
 	$_SESSION['msg_type']="warning";
 

@@ -6,7 +6,7 @@
 
     $show = $conn->query("SELECT * FROM item WHERE id=$sitem");
 
-    echo "Matha";
+     echo "Matha";
     while($mejaj=$show->fetch_assoc()){
     	echo $mejaj['level'];
     }

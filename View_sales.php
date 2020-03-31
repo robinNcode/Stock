@@ -60,7 +60,7 @@
                         $tdate=$_POST['tdate'];
                         
                         $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
-                        $stock= $conn->query("SELECT * FROM stock") or die ("Failed ". $conn->error);
+                        $stock= $conn->query("SELECT * FROM stockout") or die ("Failed ". $conn->error);
                         $count=1;
                       ?>
                 <tbody>

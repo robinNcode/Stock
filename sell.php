@@ -27,8 +27,8 @@
                             <select id="company" class="form-control" name="company">
                                 <option value="">Select Option</option>
                                 <?php while ($com=$company->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['company'];?>">
-                                        <?php echo $com['company'];?>
+                                    <option value="<?= $com['company']; ?>">
+                                        <?php echo $com['company']; ?>
                                     </option>
                                     <?php endwhile;?>
                             </select>
