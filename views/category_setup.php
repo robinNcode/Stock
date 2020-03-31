@@ -1,6 +1,6 @@
-<?php require_once 'database/categorySetup.php';
+<?php require_once '../database/categorySetup.php';
 ?>
-<form method="POST" action="database/categorySetup.php">
+<form method="POST" action="../database/categorySetup.php">
         <!-- Sesssion Messege -->
 
         <?php if(isset($_SESSION['messege'])): ?>
@@ -49,8 +49,7 @@
                                 <br>
                                 <br>
                             </fieldset>
-                          <div class="shadow-lg p-3 mb-5 bg-white rounded border border-dark">
-                            <table class="table table-hover" id="example">
+                            <table class="table table-hover border border-primary" id="example">
                                 <thead>
                                     <tr>
                                         <th >SERIAL NO</th>
@@ -71,16 +70,14 @@
                                                 <?php echo $row['Category']; ?>
                                             </td>
                                             <td align="center">
-                                                <a href="index.php?submit=category_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                
-                                                <a href="database/categorySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="views/index.php?submit=category_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT </a>
+                                                <a href="../database/categorySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
                                             </td>
 
                                         </tr>
                                         <?php endwhile; ?>
                                     </tbody>
                             </table>
-                        </div>
                         </div>
                     </div>
 </form>

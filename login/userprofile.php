@@ -1,4 +1,4 @@
-	<div class="container">
+	<div class="container shadow-lg p-3 mb-5 bg-white rounded">
         <legend class="bg-primary text-light">
             <center><i class="fa fa-user"></i>User Profile</center>
         </legend>

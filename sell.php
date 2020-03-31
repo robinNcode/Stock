@@ -1,6 +1,6 @@
 
 <form method="POST" action="database/stockout.php">
-    <div class="container">
+    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Sell</center>
         </legend>
@@ -37,20 +37,21 @@
                 </div>
                 <!--item name -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="item">Item Name :
+                    <label class="col-md-3 col-form-label" for="sitem_id">Item Name :
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
                         <?php 
                          $item= $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
                       ?>
-                            <select id="item" class="form-control" name="item">
+                            <select id="sitem_id" onchange="available()" class="form-control" name="item">
                                 <option value="">Select Option</option>
+
                                 <?php while ($com=$item->fetch_assoc()): ?>
-                                    <option value="<?php echo $com['item']; ?>" >
+                                    <option value="<?php echo $com['id']; ?>" >
                                         <?php echo $com['item']; ?>
                                     </option>
-                                    <?php endwhile;?>
+                                <?php endwhile;?>
                             </select>
 
                     </div>
@@ -66,9 +67,9 @@
                 </div>
                 <!--Re-Order Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="recorder">Re-Order Level:</label>
+                    <label class="col-md-3 col-form-label" for="avail_id">Re-Order Level:</label>
                     <div class="col-md-7">
-                        <input class="form-control" type="number" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
+                        <input class="form-control" type="text" name="recorder" id="avail_id" value="" readonly/>
                     </div>
 
                 </div>
@@ -126,11 +127,26 @@
 </form>
 
  <script>
-    window.onload = function() {
-  var d = new Date();
-  var n = d.toLocaleDateString();
+//     window.onload = function() {
+//   var d = new Date();
+//   var n = d.toLocaleDateString();
 
-  console.log(n);
-  document.getElementById('date').value = n;
-}
+//   console.log(n);
+//   document.getElementById('date').value = n;
+// }
 </script>
+
+<script type="text/javascript">
+
+        function available() {
+            var avail = new XMLHttpRequest ();
+
+        avail.open("GET","ajax/ajax20.php?sitem = "+document.getElementById("sitem_id").value,false);
+        avail.send(null);
+        alert(avail.resposeText);
+        document.getElementById("avail_id").value = avail.responseText;
+
+        }
+         
+    </script>
+ 

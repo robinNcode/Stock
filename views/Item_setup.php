@@ -8,8 +8,8 @@
   </div>
   <?php endif ?>
 
-<form method="POST" action="database/itemSetup.php">
-    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+<form method="POST" action="../database/itemSetup.php">
+    <div class="container">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Item Setup</center>
         </legend>

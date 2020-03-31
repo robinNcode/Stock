@@ -1,13 +1,12 @@
-<?php //require 'purchaseStock.php'; ?>
+
 <?php 
     $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
     $show3 = $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
-    $show = $conn->query("SELECT * FROM stockin") or die ("Failed ". $conn->error);
 
   ?>
 
 
-	<form method="POST" action="http://localhost/CI_Result_processor/crud/primary">
+	<form method="POST" action="">
     <div class="container">
       <legend class="bg-primary text-light"><center><i class="fas fa-fw fa-briefcase"></i>Sarch & View Item's Summary</center></legend>
   <!-- <div class="card-body border border-primary">
@@ -66,8 +65,7 @@
       <br>
       <br>
   </fieldset>
- <div class="shadow-lg p-3 mb-5 bg-white rounded border border-dark">
-   <table class="table table-hover border border-primary" id="example">
+  <table class="table table-hover border border-primary" id="example">
   <thead>
     <tr>
       <th>Serial No</th>
@@ -80,22 +78,14 @@
     </tr>
   </thead>
   <tbody>
-    <?php //while(): endwhile; ?>
-    <?php $serial=1; while ($row3=$show3->fetch_assoc() ): 
-    $row=$show->fetch_assoc()
-    ?>
+    <?php $serial=1; while ($row3=$show3->fetch_assoc() ): ?>
 
     <tr>
       <th><?= $serial++; ?></th>
       <td><?= $row3['item']; ?></td>
       <td><?= $row3['company']; ?></td>
       <td><?= $row3['category']; ?></td>
-     <td><?php 
-          //echo $row['p_item']."=".$row3['id'];
-       if ($row['p_item'] == $row3['id']) {
-       echo $row['p_date'];
-      }
-      else echo 0; ?></td>
+      <td><?= "3-22-20"; ?></td>
       <td><?php //$row3['available']; ?></td>
       <td><?= $row3['level']; ?></td>
     </tr>
@@ -103,7 +93,6 @@
 
   </tbody>
 </table>
-</div>
 </div>
 </div>
 </form>

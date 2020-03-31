@@ -1,6 +1,52 @@
-
-<div  class="container border border-success">
-<img name ="slide" width="1032;" height="450;" >
+    <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+                <a href="index.php?submit=category_setup.php">
+                            <div class="card bg-secondary shadow-lg h-150 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2"><span class="text-lg font-weight-bold text-white text-capitalize mb-1">CATEGORY SETUP</span>
+                                            <div class="h5 mb-0 font-weight-bold text-white"></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-search-dollar fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                </a>
+                    </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+                <a href="index.php?submit=Company_setup.php">
+                            <div class="card bg-secondary shadow-lg h-150 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2"><span class="text-lg font-weight-bold text-white text-uppercase mb-1">company SETUP</span>
+                                            <div class="h5 mb-0 font-weight-bold text-white"></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-search-dollar fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                           </div>
+                </a>
+                    </div>
+    
+        <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+            <a href="index.php?submit=item_setup.php">
+                            <div class="card bg-secondary shadow-lg h-150 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2"><span class="text-lg font-weight-bold text-white text-uppercase mb-1">item SETUP</span>
+                                            <div class="h5 mb-0 font-weight-bold text-white"></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-search-dollar fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                    </div>
+              </div>
+              
+<br>
+<div  class="container border border-success shadow-lg p-3 mb-5 bg-white rounded">
+<img name ="slide" width="1000px;" height="450px;" >
 </div>
 
 <!-- Image Slider  -->

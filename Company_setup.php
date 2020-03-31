@@ -72,7 +72,8 @@
                                 <br>
                                 <br>
                             </fieldset>
-                            <table class="table table-hover border border-primary" id="example">
+                            <div class="shadow-lg p-3 mb-5 bg-white rounded border border-dark">
+                            <table class="table table-hover" id="example">
                                 <thead>
                                     <tr>
                                         <th >SERIAL NO</th>
@@ -101,14 +102,15 @@
                                                 <?php echo $row['conum']; ?>
                                             </td>
                                             <td align="center">
-                                                <a href="index.php?submit=Company_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-warning">EDIT</a>
-                                                <a href="database/Companysetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">DELETE</a>
+                                                <a href="index.php?submit=Company_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                                <a href="database/Companysetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                             </td>
 
                                         </tr>
                                         <?php endwhile; ?>
                                     </tbody>
                             </table>
+                        </div>
                         </div>
                     </div>
 </form>

@@ -1,13 +1,8 @@
-<?php 
-    $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
-    $show = $conn->query("SELECT * FROM stockin") or die ("Failed ". $conn->error);
-    $row=$show->fetch_assoc();
-  ?>
 
-<form method="POST" action="database/purchaseStock.php">
-    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+<form method="POST" action="../database/stockout.php">
+    <div class="container">
         <legend class="bg-primary text-light">
-            <center><i class="fas fa-fw fa-briefcase"></i>Purchase</center>
+            <center><i class="fas fa-fw fa-briefcase"></i>Sell</center>
         </legend>
         <div class="card-body border border-primary">
             <fieldset>
@@ -15,20 +10,19 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="date">Date:</label>
                     <div class="col-md-7">
-                        <input class="form-control" type="date" name="p_date" id="date" />
+                        <input class="form-control" type="date" name="date" id="date"/>
                     </div>
 
                 </div>
                 <!--Company Name -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="company">Company Name :
+                    <label class="col-md-3 col-form-label" for="name_id">Company Name :
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
-                         <?php 
+                        <?php 
                         $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
                          $company= $conn->query("SELECT * FROM company") or die ("Failed ". $conn->error);
-                         $item= $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
                       ?>
                             <select id="company" class="form-control" name="company">
                                 <option value="">Select Option</option>
@@ -43,18 +37,20 @@
                 </div>
                 <!--item name -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="item_id">Item Name :
+                    <label class="col-md-3 col-form-label" for="item">Item Name :
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
-                        <select onchange="available()" id="item_id" class="form-control" name="item">
+                        <?php 
+                         $item= $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
+                      ?>
+                            <select id="item" class="form-control" name="item">
                                 <option value="">Select Option</option>
-
                                 <?php while ($com=$item->fetch_assoc()): ?>
-                                    <option value="<?= $com['id']; ?>">
-                                        <?php echo $com['item'];?>
+                                    <option value="<?php echo $com['item']; ?>" >
+                                        <?php echo $com['item']; ?>
                                     </option>
-                                <?php endwhile;?>
+                                    <?php endwhile;?>
                             </select>
 
                     </div>
@@ -62,40 +58,33 @@
                 </div>
                 <!--Available Quantity -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Available Quantity:
-                        <span class="text-danger font-weight-bold">*</span> </label>
+                    <label class="col-md-3 col-form-label" for="available">Available Quantity:</label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" value="<?= $row['$available_quantity']; ?> " id="name_id" readonly/>
+                        <input class="form-control" type="number" name="available" id="available" placeholder="View" value="<?php echo $availavle=0; ?>" readonly/>
                     </div>
 
                 </div>
                 <!--Re-Order Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="avail_id">Re-Order Level:
-                        <span class="text-danger font-weight-bold">*</span> </label>
-                    <div class="col-md-7"> 
-                        <?php /*if($row['category'] && $row['company']){
-                            $level=$row['level'];
-                        }
-                        else $level=0;
-
-                        */ ?>
-                        <input class="form-control" type="text" id="avail_id" value="" readonly/>
+                    <label class="col-md-3 col-form-label" for="recorder">Re-Order Level:</label>
+                    <div class="col-md-7">
+                        <input class="form-control" type="number" name="recorder" id="recorder" placeholder="View" value="<?php echo $recordere=0; ?>" readonly/>
                     </div>
+
                 </div>
                 <!--Stock In Quantity -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="Purchase">Purchase Quantity :
+                    <label class="col-md-3 col-form-label" for="sell_quantity">Sell Quantity :
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="pq" id="Purchase" placeholder="Input Purchase Quantity " />
+                        <input class="form-control" type="text" name="sell_quantity" id="sell_quantity" placeholder="Input Sell Quantity " />
                     </div>
 
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="add" value="yes" class="btn btn-warning float-right">Purchase
+                            <button type="submit" name="sell" class="btn btn-primary float-right">Sell
                             </button>
                         </div>
                     </div>
@@ -103,11 +92,40 @@
                 <br>
                 <br>
             </fieldset>
-
+            <!-- <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th >Serial No</th>
+                        <th >Item</th>
+                        <th >Company</th>
+                        <th >Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table> -->
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col-12" style="">
+                        <button type="submit" name="sell" class="btn btn-success float-right">Sell
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" name="create" value="yes" class="btn btn-warning float-right">DAMAGE
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" name="create" value="yes" class="btn btn-danger float-right">LOST
+                        </button>
+                    </div>
+                </div>
+            </div> -->
         </div>
-    </div>
+      </div>
 </form>
-<script>
+
+ <script>
     window.onload = function() {
   var d = new Date();
   var n = d.toLocaleDateString();
@@ -116,23 +134,3 @@
   document.getElementById('date').value = n;
 }
 </script>
-
- <script type="text/javascript">
-
-        function available() {
-            var avail = new XMLHttpRequest ();
-
-        avail.open("GET","ajax/ajax23.php?item = "+document.getElementById("item_id").value,false);
-        avail.send(null);
-        //alert(avail.resposeText);
-        document.getElementById("avail_id").value = avail.responseText;
-
-        }
-         
-    </script>
-
-
-
-
-
-

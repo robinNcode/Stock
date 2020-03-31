@@ -4,8 +4,8 @@
     $row=$show->fetch_assoc();
   ?>
 
-<form method="POST" action="database/purchaseStock.php">
-    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+<form method="POST" action="../database/purchaseStock.php">
+    <div class="container">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Purchase</center>
         </legend>
@@ -47,14 +47,13 @@
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
-                        <select onchange="available()" id="item_id" class="form-control" name="item">
+                        <select id="item_id" class="form-control" name="item">
                                 <option value="">Select Option</option>
-
                                 <?php while ($com=$item->fetch_assoc()): ?>
-                                    <option value="<?= $com['id']; ?>">
+                                    <option value="<?php echo $com['item'];?>">
                                         <?php echo $com['item'];?>
                                     </option>
-                                <?php endwhile;?>
+                                    <?php endwhile;?>
                             </select>
 
                     </div>
@@ -71,7 +70,7 @@
                 </div>
                 <!--Re-Order Level -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="avail_id">Re-Order Level:
+                    <label class="col-md-3 col-form-label" for="level">Re-Order Level:
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7"> 
                         <?php /*if($row['category'] && $row['company']){
@@ -80,7 +79,7 @@
                         else $level=0;
 
                         */ ?>
-                        <input class="form-control" type="text" id="avail_id" value="" readonly/>
+                        <input class="form-control" type="text" name="level" id="level" value="<?= $level; ?>" readonly/>
                     </div>
                 </div>
                 <!--Stock In Quantity -->
@@ -116,23 +115,3 @@
   document.getElementById('date').value = n;
 }
 </script>
-
- <script type="text/javascript">
-
-        function available() {
-            var avail = new XMLHttpRequest ();
-
-        avail.open("GET","ajax/ajax23.php?item = "+document.getElementById("item_id").value,false);
-        avail.send(null);
-        //alert(avail.resposeText);
-        document.getElementById("avail_id").value = avail.responseText;
-
-        }
-         
-    </script>
-
-
-
-
-
-

@@ -44,7 +44,6 @@
                 <br>
                 <br>
             </fieldset>
-            <div class="shadow-lg p-3 mb-5 bg-white rounded border border-dark">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -78,7 +77,6 @@
                 <?php endif ;?>
                 </tbody>
             </table>
-        </div>
         </div>
     </div>
 </form>
