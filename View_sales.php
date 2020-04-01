@@ -66,7 +66,7 @@
                 <tbody>
                     <?php while ($cat=$stock->fetch_assoc()): ?>
                     <tr>
-                        <?php if($cat['s_date'] >= $fdate && $cat['s_date'] <= $tdate ): ?>
+                        <?php if($cat['date'] >= $fdate && $cat['date'] <= $tdate ): ?>
                         <td><?= $count++; ?></td>
                         <td><?= $cat['s_company']; ?></td>
                         <td><?= $cat['s_item']; ?></td>

@@ -16,7 +16,7 @@
                 </div>
                 <!--Company Name -->
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name_id">Company Name :
+                    <label class="col-md-3 col-form-label" for="company">Company Name :
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
