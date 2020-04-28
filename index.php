@@ -23,6 +23,7 @@ session_start();
         hr.new5 {
             border: 2px solid black;
         }
+        
     </style>
 </head>
 
@@ -99,7 +100,7 @@ session_start();
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="index.php?submit=dashboard.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <div class="dropdown">
@@ -124,23 +125,25 @@ session_start();
     <?php
         //echo '<marquee><h1 class="bg-danger">Dead-Line => 22-03-2020</h1></marquee>';
         
-          if(isset($_GET['submit']))
+        if(isset($_GET['submit']))
           {
 
             $page_path = $_GET['submit'];
           require $page_path;
         }
-    else if (isset($_POST['save'])){
+        else {
+            require 'Dashboard.php';
+            }
+        if (isset($_POST['save'])){
         $username = $_POST['username'];
         $pass = $_POST['pass'];
 
         if($username=="adovasoft@gmail.com" && $pass=="robin"){
            require 'login/userprofile.php';
-        }
-    }
-    else {
-            require 'Dashboard.php';
             }
+        else require 'login/demo.php';
+       }
+    
         ?>
     </div>
     </div>

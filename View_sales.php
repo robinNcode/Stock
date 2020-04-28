@@ -48,10 +48,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Serial No</th>
-                        <th scope="col">Company</th>
-                        <th scope="col">Item </th>
-                        <th scope="col">Quantity</th>
+                        <th >Serial No</th>
+                        <th >Company</th>
+                        <th >Item </th>
+                        <th >Quantity</th>
+                        <th >SELL DATE</th>
                     </tr>
                 </thead>
                 <?php if(isset($_POST['search'])): ?>
@@ -61,16 +62,27 @@
                         
                         $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
                         $stock= $conn->query("SELECT * FROM stockout") or die ("Failed ". $conn->error);
+                        $stock1= $conn->query("SELECT * FROM item") or die ("Failed ". $conn->error);
                         $count=1;
                       ?>
                 <tbody>
-                    <?php while ($cat=$stock->fetch_assoc()): ?>
+                    <?php while ($cat=$stock->fetch_assoc()):
+                    $cat1=$stock1->fetch_assoc();
+
+                     ?>
                     <tr>
                         <?php if($cat['date'] >= $fdate && $cat['date'] <= $tdate ): ?>
                         <td><?= $count++; ?></td>
                         <td><?= $cat['s_company']; ?></td>
-                        <td><?= $cat['s_item']; ?></td>
+                        <td><?php 
+                        echo $cat1['id']." == ".$cat['s_item'];
+                        if ($cat1['id'] == $cat['s_item']){
+                            echo $cat1['item'];
+                        }
+                        else echo "Invalid Item" 
+                            ?></td>
                         <td><?= $cat['sell_quantity']; ?></td>
+                        <td><?= $cat['date']; ?></td>
                         
                     <?php endif; ?>
                     </tr>

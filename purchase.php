@@ -47,7 +47,7 @@
                         <span class="text-danger font-weight-bold">*</span>
                     </label>
                     <div class="col-md-7">
-                        <select onchange="available()" id="item_id" class="form-control" name="item">
+                        <select onchange="data()" id="item_id" class="form-control" name="item">
                                 <option value="">Select Option</option>
 
                                 <?php while ($com=$item->fetch_assoc()): ?>
@@ -108,28 +108,27 @@
     </div>
 </form>
 <script>
-    window.onload = function() {
+    /*window.onload = function() {
   var d = new Date();
   var n = d.toLocaleDateString();
 
   console.log(n);
   document.getElementById('date').value = n;
-}
+}*/
 </script>
 
- <script type="text/javascript">
+<script type="text/javascript">
+     function data() {
+        var ajax = new XMLHttpRequest() ;
 
-        function available() {
-            var avail = new XMLHttpRequest ();
+        ajax.open ("GET","ajax/ajax20.php?level ="+document.getElementById("item_id").value,false);
 
-        avail.open("GET","ajax/ajax23.php?item = "+document.getElementById("item_id").value,false);
-        avail.send(null);
-        //alert(avail.resposeText);
-        document.getElementById("avail_id").value = avail.responseText;
+        ajax.send();
+        alert(ajax.responseText);
+        document.getElementById("avail_id").innerHTML = ajax.responseText;
+     }
 
-        }
-         
-    </script>
+</script>
 
 
 

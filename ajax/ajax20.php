@@ -2,13 +2,14 @@
 
     $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
 
-    $sitem=$_GET['sitem'];
+    $level=$_GET['level'];
 
-    $show = $conn->query("SELECT * FROM item WHERE id=$sitem");
+    $show = $conn->query("SELECT * FROM item WHERE id=$level");
+    //$conn->query("DELETE FROM company WHERE id=$id")or die("Deletion failed: " .$conn->connect_error);
 
-     echo "Matha";
-    while($mejaj=$show->fetch_assoc()){
-    	echo $mejaj['level'];
+
+    while($row=$show->fetch_assoc()){
+    	echo $row['level'];
     }
 
 

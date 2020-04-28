@@ -46,7 +46,11 @@
               
 <br>
 <div  class="container border border-success shadow-lg p-3 mb-5 bg-white rounded">
-<img name ="slide" width="1000px;" height="450px;" >
+    <div class="row">
+        <div class="col-12">
+            <img class="col-12" name ="slide">
+        </div>
+    </div>
 </div>
 
 <!-- Image Slider  -->

@@ -25,11 +25,12 @@
                             <center><i class="fas fa-fw fa-briefcase"></i>Registration Form</center>
                         </legend>
                    
-                        <div class="card-body">
+                        <div class="card-body" >
                             <fieldset>
-                                <div class="border border-primary">
+                                <div class="border border-primary ">
                                 <!--name -->
-                                <div class="form-group row">
+                                <div class="p-4">
+                                <div class="form-group row ">
                                     <label class="col-md-3 col-form-label" for="name_id">Name :
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
@@ -78,6 +79,7 @@
                                 <br>
                                 <br>
                             </div>
+                        </div>
                             </fieldset>
                           
                         </div>
