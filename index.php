@@ -110,7 +110,7 @@ session_start();
                                     <ul class="dropdown-menu">
                                         <li><a href="index.php?submit=login/userprofile.php">Your Profile</a></li>
                                         <li><a href="#">Settings</a></li>
-                                        <li><a href="login/log-inpage.php">Log Out</a></li>
+                                        <li><a href="login">Log Out</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -139,9 +139,16 @@ session_start();
         $pass = $_POST['pass'];
 
         if($username=="adovasoft@gmail.com" && $pass=="robin"){
-           require 'login/userprofile.php';
+            echo "<script>
+                   alert('Log in successful');
+                </script>";
             }
-        else require 'login/demo.php';
+        else {
+            echo "<script>
+                   alert('Wrong Password Or Wrong Username');
+                </script>";
+            
+        } 
        }
     
         ?>

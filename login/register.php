@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-    <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-<style>
-
-</style>
-</head>
-<body>
-	
 		<form method="POST" action="database/register.php">
 			
         		<input type="hidden" name ="id" value ="<?= $id ?>">
@@ -32,6 +14,17 @@
                                 <div class="p-4">
                                 <div class="form-group row ">
                                     <label class="col-md-3 col-form-label" for="name_id">Name :
+                                        <span class="text-danger font-weight-bold">*</span>
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input type="text" id="category" class="form-control" name="category">
+                                    </div>
+
+                                </div>
+                                <!--name -->
+                                <div class="p-4">
+                                <div class="form-group row ">
+                                    <label class="col-md-3 col-form-label" for="name_id">De :
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
@@ -86,6 +79,3 @@
                     </div>
                 
 			</form>
-
-</body>
-</html>

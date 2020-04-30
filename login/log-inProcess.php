@@ -1,13 +1,21 @@
 <?php 
-/*
+
  if (isset($_POST['save'])){
  	$username = $_POST['username'];
  	$pass = $_POST['pass'];
 
  	if ($username=="adovasoft@gmail.com" && $pass=="robin"){
- 		require 'userprofile.php';
+ 		echo "<script>
+                   alert('Log in successful');
+                </script>";
+ 		require '../index.php';
  	}
- 	else echo "Muri Khaa";
+ 	else {
+ 		echo "<script>
+                   alert('Log in Unsuccessful Wrong Password or Wrong Usernmae');
+                </script>";
+        require 'index.php';
+ 	}
  }
-*/
+
 ?>

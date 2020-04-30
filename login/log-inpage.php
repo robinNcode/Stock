@@ -39,7 +39,7 @@
                     <br>
                     <br>
 
-                    <button type="submit" class="btn btn-success">LOG IN</button>
+                    <button type="submit" name="save" class="btn btn-success">LOG IN</button>
                 </div>
             </form>
         </div>
