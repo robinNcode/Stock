@@ -42,9 +42,9 @@
                                     <div class="row">
                                         <div class="col-10">
                                             <?php if ($update == true): ?>
-                                                <button type="submit" name="update" class="btn btn-primary float-right ">UPDATE</button>
+                                                <button type="submit" data-toggle="modal" data-target="#updateMsg"  name="update" class="btn btn-primary float-right ">UPDATE</button>
                                             <?php else: ?>
-                                                <button type="submit" data-toggle="modal" data-target="#exampleModal" name="save" onmouseover="return validateForm()" class="btn btn-warning float-right ">SAVE</button>
+                                                <button type="submit" data-toggle="modal" data-target="#saveMsg" name="save" onmouseover="return validateForm()" class="btn btn-warning float-right ">SAVE</button>
                                         <?php endif; ?>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                             <td align="center">
                                                 <a href="index.php?submit=category_setup.php&edit=<?php echo $row['id']; ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                 
-                                                <a href="database/categorySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="database/categorySetup.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger"><div data-toggle="modal" data-target="#deleteMsg"> <i class="fas fa-trash-alt"></i></div></a>
                                             </td>
 
                                         </tr>
@@ -89,7 +89,7 @@
 </form>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="saveMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -99,7 +99,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <h3 class="text-success">Information has been Saved!</h3>
+        <h5 class="text-success">Category name has been Saved!</h5>
       </div>
       <div class="modal-footer">
       </div>
@@ -107,7 +107,47 @@
   </div>
 </div>
 
+<!--Update Modal -->
+<div class="modal fade" id="updateMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center><h4 class="modal-title" id="exampleModalLabel">MESSEGE</h4></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-danger" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-warning">Category name has been Updated!</h5>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Delete Modal -->
+<div class="modal fade" id="deleteMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center><h4 class="modal-title" id="exampleModalLabel">MESSEGE</h4></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-danger" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-danger">Category name has been Deleted!</h5>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
+
 function validateForm() {
   var x = document.forms["myForm"]["category"].value;
   if (x == "") {
