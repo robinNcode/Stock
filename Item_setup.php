@@ -1,3 +1,5 @@
+<!-- Sesssion Messege -->
+
 <?php if(isset($_SESSION['message'])): ?>
   <div class="container alert alert-<?= $_SESSION['msg_type']?>">
     

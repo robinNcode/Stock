@@ -1,17 +1,7 @@
 <?php
+ 	
+ 	include 'db_config.php';
  
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sms";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
     $update = false;
     $id = 0;
     $category='';
@@ -44,7 +34,7 @@ if ($conn->connect_error) {
  	$result = $conn->query("SELECT * FROM category WHERE id =$id") or die ("Failed ". $conn->error);
  	while($row=$result->fetch_assoc()){
  		
- 		 	$category = $row['Category'];
+ 		$category = $row['Category'];
  	}
  }
  else if (isset($_POST['update'])){

@@ -1,4 +1,14 @@
+<!-- Sesssion Messege -->
 
+    <?php if(isset($_SESSION['messege'])){
+        echo "<div class=\"alert alert-".$_SESSION['msg_type']."\">";
+        echo "<center><marquee><h3>".$_SESSION['messege']."</h3></marquee></center>";
+        unset ($_SESSION['messege']);
+        echo "</div>";
+    }
+    //else echo "kaj Kore Nah";
+       
+    ?>
 <form method="POST" action="database/stockout.php">
     <div class="container shadow-lg p-3 mb-5 bg-white rounded">
         <legend class="bg-primary text-light">

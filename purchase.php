@@ -1,3 +1,14 @@
+<!-- Sesssion Messege -->
+
+    <?php if(isset($_SESSION['messege'])){
+        echo "<div class=\"alert alert-".$_SESSION['msg_type']."\">";
+        echo "<center><marquee><h3>".$_SESSION['messege']."</h3></marquee></center>";
+        unset ($_SESSION['messege']);
+        echo "</div>";
+    }
+    //else echo "kaj Kore Nah";
+       
+    ?>
 <?php 
     $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
     $show = $conn->query("SELECT * FROM stockin") or die ("Failed ". $conn->error);

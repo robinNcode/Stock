@@ -1,16 +1,6 @@
 <?php
- 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sms";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+session_start(); 
+include 'db_config.php';
 
     $update = false;
     $id = 0;

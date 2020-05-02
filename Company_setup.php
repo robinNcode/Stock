@@ -8,14 +8,14 @@
 
             <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
                 <?php 
-        echo "<center><marquee><h3>".$_SESSION['messege']."</h3></marquee></center>";
-        unset ($_SESSION['messege']);
+                    echo "<center><marquee><h3>".$_SESSION['messege']."</h3></marquee></center>";
+                    unset ($_SESSION['messege']);
         ?>
             </div>
-            <?php endif; ?>
+                <?php endif; ?>
 
-                <?php 
-    $conn = new mysqli('localhost', 'root','', 'sms')or die("Connection failed: " . $conn->connect_error);
+<?php 
+    $conn = new mysqli('localhost','root','','sms')or die("Connection failed: " . $conn->connect_error);
     $show = $conn->query("SELECT * FROM company") or die ("Failed ". $conn->error);
 
   ?>

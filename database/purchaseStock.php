@@ -1,18 +1,6 @@
 <?php
- 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sms";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
+session_start();
+include 'db_config.php';
 
 if(isset($_POST['add'])){
 
@@ -28,7 +16,7 @@ if(isset($_POST['add'])){
 
 
 	$_SESSION['message']="Record has been Updated!";
-	$_SESSION['msg_type']="warning";
+	$_SESSION['msg_type']="success";
 
 	header("location: ../index.php?submit=purchase.php");
 }
