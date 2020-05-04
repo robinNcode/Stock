@@ -1,15 +1,5 @@
-<!-- Sesssion Messege -->
 
-    <?php if(isset($_SESSION['messege'])){
-        echo "<div class=\"alert alert-".$_SESSION['msg_type']."\">";
-        echo "<center><marquee><h3>".$_SESSION['messege']."</h3></marquee></center>";
-        unset ($_SESSION['messege']);
-        echo "</div>";
-    }
-    //else echo "kaj Kore Nah";
-       
-    ?>
-<form method="POST" action="database/stockout.php">
+<form method="POST" name="myForm" action="database/stockout.php">
     <div class="container shadow-lg p-3 mb-5 bg-white rounded">
         <legend class="bg-primary text-light">
             <center><i class="fas fa-fw fa-briefcase"></i>Sell</center>
@@ -88,14 +78,16 @@
                     <label class="col-md-3 col-form-label" for="sell_quantity">Sell Quantity :
                         <span class="text-danger font-weight-bold">*</span> </label>
                     <div class="col-md-7">
-                        <input class="form-control" type="text" name="sell_quantity" id="sell_quantity" placeholder="Input Sell Quantity " />
+                        <input oninput="pqvalidate()" class="form-control" type="text" name="sell_quantity" id="sell_quantity" placeholder="Input Sell Quantity " />
+                        <span id="demo"></span>
                     </div>
 
                 </div>
+                <div id="demo1"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
-                            <button type="submit" name="sell" class="btn btn-primary float-right">Sell
+                            <button onmouseenter="return validate()" data-toggle="modal" data-target="#saveMsg" type="submit" name="sell" class="btn btn-primary float-right">Sell
                             </button>
                         </div>
                     </div>
@@ -135,6 +127,50 @@
         </div>
       </div>
 </form>
+
+<!-- Modal -->
+<div class="modal fade" id="saveMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center><h4 class="modal-title" id="exampleModalLabel">MESSEGE</h4></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-danger" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-success">Successfull..!<br>To Check go to the View Sales page..!</h5>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function pqvalidate() {
+    var x = document.forms["myForm"]["sell_quantity"].value;
+    if (x == "") {
+        var str1='<h6 class="text-danger">Sell Quantity required..!</h6>';
+        document.getElementById("demo").innerHTML = str1;
+        return false;
+    }
+    else{
+        var str1='<h6 class="text-success">Done..!</h6>';
+        document.getElementById("demo").innerHTML = str1;
+        return false;
+    }
+}
+
+function validate() {
+    var x = document.forms["myForm"]["sell_quantity"].value;
+    if (x == "") {
+        var str1='<h6 class="text-danger"><marquee>All fields must be filled out..!</h6></marquee>';
+        document.getElementById("demo1").innerHTML = str1;
+        return false;
+    }
+}
+</script>
 
  <script>
 //     window.onload = function() {

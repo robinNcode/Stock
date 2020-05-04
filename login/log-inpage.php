@@ -1,11 +1,9 @@
+<div class="row pt-4">
+    <div class="col-3">
 
-
-    <div class="row pt-4">
-        <div class="col-3">
-
-        </div>
+    </div>
         <div class="col-6">
-            <form class="form-inline" method="POST" action="../index.php">
+            <form name="myForms" class="form-inline" method="POST" action="../index.php">
 
                 <!-- Body Of CARD -->
 
@@ -32,7 +30,8 @@
 
                         </label>
                         <div class="col-md-7">
-                            <input type="password" class="form-control" name="pass" placeholder="Enter password" id="pwd">
+                            <input type="password" oninput="return Form()" class="form-control" name="pass" placeholder="Enter password" id="pwd">
+                            <span id="demo"></span>
                         </div>
 
                     </div>
@@ -47,3 +46,20 @@
 
         </div>
     </div>
+<script>
+
+function Form() {
+  var x = document.forms["myForm"]["pass"].value;
+  if (x != "sajibrobi") {
+    var str1='<h6 class="text-danger">Password incorrect <br> Try again!!</h6>';
+    document.getElementById("demo").innerHTML = str1;
+    return false;
+  }
+  else{
+    var str1='<h6 class="text-success">Done!!</h6>';
+    document.getElementById("demo").innerHTML = str1;
+    return false;
+  }
+}
+    
+</script>

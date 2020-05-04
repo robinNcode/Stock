@@ -1,5 +1,4 @@
 <?php
-session_start(); 
 include 'db_config.php';
 
     $update = false;
@@ -14,7 +13,7 @@ include 'db_config.php';
 
 
  	$conn->query("INSERT INTO item(item,company,category,level) VALUES('$item','$company','$category', '$level')")or die("Connection failed: " . $conn->connect_error);
- 	echo "hello";
+ 
  	$_SESSION ['messege'] = "Information has been Saved!";
  	$_SESSION ['msg_type'] = "success";
  	header("location: ../index.php?submit=item_setup.php");

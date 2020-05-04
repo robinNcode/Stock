@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'db_config.php';
 
     $update = false;

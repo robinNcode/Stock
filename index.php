@@ -134,7 +134,7 @@
         $username = $_POST['username'];
         $pass = $_POST['pass'];
 
-        if($username=="adovasoft@gmail.com" && $pass=="robin"){
+        if($username=="adovasoft@gmail.com" && $pass=="sajibrobi"){
             echo "<script>
                    alert('Log in successful');
                 </script>";

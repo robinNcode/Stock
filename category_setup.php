@@ -33,8 +33,8 @@
                                         <span class="text-danger font-weight-bold">*</span>
                                     </label>
                                     <div class="col-md-7">
-                                        <input type="text" id="category" class="form-control" name="category" value="<?= $category; ?>">
-                                        <span id="demo" class="text-danger font-weight-bold"></span>
+                                        <input type="text" id="category" class="form-control" oninput="return validateForm()" name="category" value="<?= $category; ?>">
+                                        <span id="demo" class="font-weight-bold"></span>
                                     </div>
 
                                 </div>
@@ -44,7 +44,7 @@
                                             <?php if ($update == true): ?>
                                                 <button type="submit" data-toggle="modal" data-target="#updateMsg"  name="update" class="btn btn-primary float-right ">UPDATE</button>
                                             <?php else: ?>
-                                                <button type="submit" data-toggle="modal" data-target="#saveMsg" name="save" onmouseover="return validateForm()" class="btn btn-warning float-right ">SAVE</button>
+                                                <button type="submit" onmouseover="return validate()" data-toggle="modal" data-target="#saveMsg" name="save" class="btn btn-warning float-right ">SAVE</button>
                                         <?php endif; ?>
                                         </div>
                                     </div>
@@ -149,6 +149,19 @@
 <script>
 
 function validateForm() {
+  var x = document.forms["myForm"]["category"].value;
+  if (x == "") {
+    var str1='<h6 class="text-danger">Category name must be filled out</h6>';
+    document.getElementById("demo").innerHTML = str1;
+    return false;
+  }
+  else{
+    var str1='<h6 class="text-success">Done!!</h6>';
+    document.getElementById("demo").innerHTML = str1;
+    return false;
+  }
+}
+function validate() {
   var x = document.forms["myForm"]["category"].value;
   if (x == "") {
     var str1='<h6 class="text-danger">Category name must be filled out</h6>';
